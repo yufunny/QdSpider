@@ -10,18 +10,18 @@ class Conf{
     public static $bookIds = array(3106580,2952453,3513193);
 
     public static $mailOptions = array(
-        'Host' => 'smtp-mail.outlook.com',
+        'Host' => '',
         'SMTPAuth'  => true,
-        'Username'  => 'pirate_001@outlook.com',
-        'Password'  => 'pirate15',
+        'Username'  => '',
+        'Password'  => '',
         'SMTPSecure'=> 'tls',
         'Port'      => 587,
-        'From'      => 'pirate_001@outlook.com',
+        'From'      => '',
         'FromName'  => 'notice',
         'isHTML'	=> true,
     );
 
-    public static $addressList = array("825627580@qq.com");
+    public static $addressList = array("");
 
     public static $subjectTemplate = "你关注的小说《{1}》更新啦！";
 
