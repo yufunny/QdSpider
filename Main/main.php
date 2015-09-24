@@ -41,19 +41,19 @@ foreach($bookIds as $id){
     }
 
     if(compare($id,$chapterId)){
-        spiderLog("update",Conf::$logLevel["success"],$id . "已更新");
+        spiderLog("update",Conf::$logLevel["success"],$id . "($bookName)" . "已更新");
         $readUrl = str_replace("{1}",$id,$readUrlTemplate);
         $readUrl = str_replace("{2}",$chapterId,$readUrl);
         list($code,$msg) = sendMail($bookName,$title,$readUrl);
         if($code == 0){
-            spiderLog("mail",Conf::$logLevel["success"],$id . "发送邮件通知成功");
+            spiderLog("mail",Conf::$logLevel["success"],$id . "($bookName)" . "发送邮件通知成功");
         }
         else{
-            spiderLog("mail",Conf::$logLevel["error"],$id . $msg);
+            spiderLog("mail",Conf::$logLevel["error"],$id . "($bookName)" . $msg);
         }
     }
     else{
-        spiderLog("update",Conf::$logLevel["warning"],$id . "未更新");
+        spiderLog("update",Conf::$logLevel["warning"],$id . "($bookName)" . "未更新");
     }
     $fp = fopen("foo.txt","a");
     fwrite($fp,$bookName . $title .$chapterId ."\n");
